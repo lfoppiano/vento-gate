@@ -1,3 +1,5 @@
+package org.vento.semantic.sentiment;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Martin
