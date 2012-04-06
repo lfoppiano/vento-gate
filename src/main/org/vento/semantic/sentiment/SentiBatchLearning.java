@@ -5,11 +5,15 @@ import gate.Corpus;
 import gate.CorpusController;
 import gate.Factory;
 import gate.Gate;
+import gate.creole.ExecutionException;
+import gate.creole.ResourceInstantiationException;
 import gate.util.GateException;
 import gate.util.persistence.PersistenceManager;
+import org.vento.gate.GateBatchProcessing;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 
 /**
  * Created by IntelliJ IDEA.
@@ -18,25 +22,38 @@ import java.io.IOException;
  * Time: 18:23
  * To change this template use File | Settings | File Templates.
  */
-public class SentiBatchLearning {
+public class SentiBatchLearning implements GateBatchProcessing{
 
-  public void conductLearning(File[] learningBatch, File gateConfigFile) throws GateException,IOException{
+    CorpusController application;
 
-    // initialise GATE - this must be done before calling any GATE APIs
-    Gate.init();
+    public SentiBatchLearning(File gateConfigFile) throws IOException, GateException {
+        init(gateConfigFile);
+    }
 
-    // load the saved application
-    CorpusController application = (CorpusController) PersistenceManager.loadObjectFromFile(gateConfigFile);
+    public void init(File gateConfigFile) throws GateException, IOException {
+        // initialise GATE - this must be done before calling any GATE APIs
+        Gate.init();
 
-    Corpus corpus = Factory.newCorpus("BatchLearning Corpus");
-    for (File file:learningBatch) {
-
-        corpus.add(Factory.newDocument(file.toURI().toURL()));
+        // load the saved application
+        application = (CorpusController) PersistenceManager.loadObjectFromFile(gateConfigFile);
 
     }
 
-    application.setCorpus(corpus);
-    application.execute();
+    public void loadExample(String corpusName, File example) {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
 
-  }
+    public void loadExamples(String corpusName, File[] examples) throws ResourceInstantiationException, MalformedURLException {
+        Corpus corpus = Factory.newCorpus(corpusName);
+        for (File file:examples) {
+            corpus.add(Factory.newDocument(file.toURI().toURL()));
+        }
+        application.setCorpus(corpus);
+
+    }
+
+    public void perform() throws ExecutionException {
+        application.execute();
+
+    }
 }

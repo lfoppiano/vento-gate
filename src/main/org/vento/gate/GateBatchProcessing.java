@@ -1,6 +1,12 @@
 package org.vento.gate;
 
+import gate.creole.ExecutionException;
+import gate.creole.ResourceInstantiationException;
+import gate.util.GateException;
+
 import java.io.File;
+import java.io.IOException;
+import java.net.MalformedURLException;
 
 /**
  * Created by IntelliJ IDEA.
@@ -11,12 +17,12 @@ import java.io.File;
  */
 public interface GateBatchProcessing {
     
-    public void init(File gateConfigFile);
+    public void init(File gateConfigFile) throws GateException, IOException;
     
-    public void loadExample(File example);
+    public void loadExample(String corpusName, File example);
 
-    public void loadExamples(File[] examples);
+    public void loadExamples(String corpusName, File[] examples) throws ResourceInstantiationException, MalformedURLException;
 
-    public void perform();
+    public void perform() throws ExecutionException;
 
 }
