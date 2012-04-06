@@ -22,13 +22,14 @@ public class SentiBatchLearning {
     Gate.init();
 
     // load the saved application
-    CorpusController application =
-    (CorpusController) PersistenceManager.loadObjectFromFile(gateConfigFile);
+    CorpusController application = (CorpusController) PersistenceManager.loadObjectFromFile(gateConfigFile);
 
     Corpus corpus = Factory.newCorpus("BatchLearning Corpus");
-    for (File file:learningBatch)
+    for (File file:learningBatch) {
 
         corpus.add(Factory.newDocument(file.toURI().toURL()));
+
+    }
 
     application.setCorpus(corpus);
     application.execute();
