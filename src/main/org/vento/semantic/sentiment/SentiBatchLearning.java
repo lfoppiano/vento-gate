@@ -1,6 +1,10 @@
 package org.vento.semantic.sentiment;
 
 import gate.*;
+import gate.Corpus;
+import gate.CorpusController;
+import gate.Factory;
+import gate.Gate;
 import gate.util.GateException;
 import gate.util.persistence.PersistenceManager;
 
