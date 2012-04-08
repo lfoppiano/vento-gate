@@ -21,9 +21,8 @@ public class SentiBatchLearningTest {
     
     @Before
     public void setUp() throws URISyntaxException, IOException, GateException {
-        
 
-        File gateConfigFile = new File(this.getClass().getResource("/batch-learning.training.configuration.xml").toURI());
+        File gateConfigFile = new File(this.getClass().getResource("/gate-project-learning-test/batch-learning.training.configuration.xml").toURI());
         File gateHome = new File("/opt/GATE_7.0");
 
         batchLearning = new SentiBatchLearning(gateHome, gateConfigFile);
