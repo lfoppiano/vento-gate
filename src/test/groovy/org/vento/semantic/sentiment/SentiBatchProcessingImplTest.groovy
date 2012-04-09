@@ -24,7 +24,7 @@ public class SentiBatchProcessingImplTest {
 
         String dataStore = this.getClass().getResource("/").toURI().toString()+"/temp_learning_datastore/";
         
-        batchLearning = new SentiBatchProcessingImpl(gateHome, gateConfigFile, dataStore,"learningCorpus");
+        batchLearning = new SentiBatchProcessingImpl(gateHome, gateConfigFile, dataStore, "learningCorpus");
     }
 
     @Test
@@ -44,6 +44,9 @@ public class SentiBatchProcessingImplTest {
         def after = System.currentTimeMillis()
 
         println "learning session finished, took ${after-before} ms"
+
+
+
     }
     
 

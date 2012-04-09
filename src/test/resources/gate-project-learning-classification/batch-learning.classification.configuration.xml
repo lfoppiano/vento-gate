@@ -23,7 +23,7 @@
     <strategiesList class="gate.util.persistence.CollectionPersistence">
       <localList>
         <gate.util.persistence.AnalyserRunningStrategyPersistence>
-          <runMode>1</runMode>
+          <runMode>2</runMode>
           <featureName></featureName>
           <featureValue></featureValue>
           <pr class="gate.util.persistence.LanguageAnalyserPersistence">
@@ -88,7 +88,7 @@
           </pr>
         </gate.util.persistence.AnalyserRunningStrategyPersistence>
         <gate.util.persistence.AnalyserRunningStrategyPersistence>
-          <runMode>1</runMode>
+          <runMode>2</runMode>
           <featureName></featureName>
           <featureValue></featureValue>
           <pr class="gate.util.persistence.PRPersistence">
@@ -139,7 +139,7 @@
           </pr>
         </gate.util.persistence.AnalyserRunningStrategyPersistence>
         <gate.util.persistence.AnalyserRunningStrategyPersistence>
-          <runMode>1</runMode>
+          <runMode>2</runMode>
           <featureName></featureName>
           <featureValue></featureValue>
           <pr class="gate.util.persistence.PRPersistence">
@@ -198,7 +198,7 @@
           </pr>
         </gate.util.persistence.AnalyserRunningStrategyPersistence>
         <gate.util.persistence.AnalyserRunningStrategyPersistence>
-          <runMode>2</runMode>
+          <runMode>1</runMode>
           <featureName></featureName>
           <featureValue></featureValue>
           <pr class="gate.util.persistence.PRPersistence">
@@ -249,7 +249,7 @@
           </pr>
         </gate.util.persistence.AnalyserRunningStrategyPersistence>
         <gate.util.persistence.AnalyserRunningStrategyPersistence>
-          <runMode>2</runMode>
+          <runMode>1</runMode>
           <featureName></featureName>
           <featureValue></featureValue>
           <pr class="gate.util.persistence.LanguageAnalyserPersistence">
@@ -553,7 +553,7 @@
               <localMap>
                 <entry>
                   <string>outputASName</string>
-                  <null/>
+                  <string>Output</string>
                 </entry>
                 <entry>
                   <string>corpus</string>
@@ -561,7 +561,7 @@
                 </entry>
                 <entry>
                   <string>learningMode</string>
-                  <gate.learning.RunMode>TRAINING</gate.learning.RunMode>
+                  <gate.learning.RunMode>APPLICATION</gate.learning.RunMode>
                 </entry>
                 <entry>
                   <string>inputASName</string>
@@ -570,6 +570,7 @@
               </localMap>
             </runtimeParams>
             <resourceType>gate.learning.LearningAPIMain</resourceType>
+            <resourceName>simpleBatchLearning</resourceName>
             <initParams class="gate.util.persistence.MapPersistence">
               <mapType>gate.util.SimpleFeatureMapImpl</mapType>
               <localMap>
