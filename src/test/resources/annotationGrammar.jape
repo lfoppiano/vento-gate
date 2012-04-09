@@ -16,7 +16,7 @@ Rule: Review
 
 	FeatureMap features = Factory.newFeatureMap();  
  
-	features.put("score", gate.Utils.stringFor(doc, scoreAnn).substring(0,1)+"_Star_Review");
+	features.put("score", gate.Utils.stringFor(doc, scoreAnn));
  
 	outputAS.add(scoreSet.firstNode(), scoreSet.lastNode(), "Review",  features);
 }
