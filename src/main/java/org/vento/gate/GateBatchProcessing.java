@@ -7,6 +7,7 @@ import gate.util.GateException;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.net.URL;
 
 /**
  * Created by IntelliJ IDEA.
@@ -17,14 +18,12 @@ import java.net.MalformedURLException;
  */
 public interface GateBatchProcessing {
     
-    public void init(File gateHome, File gateConfigFile) throws GateException, IOException;
-    
-    public void init(File gateConfigFile) throws GateException, IOException;
-    
-    public void loadExample(String corpusName, File example);
+    public void init(File gateHome, File gateConfigFile, String dataStoreDir, String corpusName) throws GateException, IOException;
 
-    public void loadCorpus(String corpusName, File[] examples) throws ResourceInstantiationException, MalformedURLException;
+    public void addAllToCorpus(URL directory, String extension) throws IOException, GateException;
 
-    public void performTraining() throws ExecutionException;
+    public void addToCorpus(File file) throws MalformedURLException, GateException;
+
+    public void perform() throws ExecutionException, GateException;
 
 }
