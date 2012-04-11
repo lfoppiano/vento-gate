@@ -22,7 +22,7 @@ public interface GateBatchProcessing {
 
     public void addAllToCorpus(URL directory, String extension) throws IOException, GateException;
 
-    public void addToCorpus(File file) throws MalformedURLException, GateException;
+    public void addToCorpus(File file, String encoding, String mimeType) throws MalformedURLException, GateException;
 
     public void perform() throws ExecutionException, GateException;
 
