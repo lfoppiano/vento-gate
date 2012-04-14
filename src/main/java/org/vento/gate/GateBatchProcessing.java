@@ -1,5 +1,6 @@
 package org.vento.gate;
 
+import gate.Corpus;
 import gate.creole.ExecutionException;
 import gate.creole.ResourceInstantiationException;
 import gate.util.GateException;
@@ -23,6 +24,8 @@ public interface GateBatchProcessing {
     public void addAllToCorpus(URL directory, String extension) throws IOException, GateException;
 
     public void addToCorpus(File file, String encoding, String mimeType) throws MalformedURLException, GateException;
+
+    public Corpus getCorpus();
 
     public void perform() throws ExecutionException, GateException;
 

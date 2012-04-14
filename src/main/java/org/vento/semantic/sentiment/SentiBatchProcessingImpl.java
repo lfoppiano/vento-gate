@@ -69,7 +69,6 @@ public class SentiBatchProcessingImpl implements GateBatchProcessing{
     public void addAllToCorpus(URL directory, String extension) throws IOException, GateException {
         //assuming UTF-8 encoding and recursive iteration
         persistentCorpus.populate(directory, new ExtensionFileFilter("XML files", extension), "UTF-8", true);
-        persistentDS.sync(persistentCorpus);
     }
 
     public void addToCorpus(File file, String encoding, String mimeType) throws MalformedURLException, GateException {
@@ -97,9 +96,13 @@ public class SentiBatchProcessingImpl implements GateBatchProcessing{
 
     }
 
+    public Corpus getCorpus() {
+     return persistentCorpus;
+    }
+
     public void perform() throws ExecutionException, GateException {
         application.execute();
-        persistentDS.close();
+        //persistentDS.close();
 
     }
 }
