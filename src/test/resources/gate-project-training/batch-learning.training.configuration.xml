@@ -561,7 +561,7 @@
                 </entry>
                 <entry>
                   <string>learningMode</string>
-                  <gate.learning.RunMode>TRAINING</gate.learning.RunMode>
+                  <gate.learning.RunMode>MITRAINING</gate.learning.RunMode>
                 </entry>
                 <entry>
                   <string>inputASName</string>
