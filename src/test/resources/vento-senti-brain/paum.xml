@@ -3,7 +3,7 @@
   <VERBOSITY level="1"/>
   <SURROUND value="false"/>
   <PARAMETER name="thresholdProbabilityClassification" 
-	     value="0.5"/>
+	     value="0.5"/> <!-- test with values 0.6, 0.7, 0.8 (0.9 or 1 might be too much) -->
   <multiClassification2Binary method="one-vs-others"/>
   <EVALUATION method="kfold" 
 	      runs="5"
@@ -15,12 +15,20 @@
     <INSTANCE-TYPE>Review</INSTANCE-TYPE>  
     <NGRAM>
     	<NAME>ngram</NAME>
-    	<NUMBER>1</NUMBER>
-    	<CONSNUM>1</CONSNUM>
+    	<NUMBER>1</NUMBER> <!-- test higher numbers like 2,3 -->
+    	<CONSNUM>1</CONSNUM> <!-- change this while testing more features from below -->
     	<CONS-1>
 		<TYPE>Token</TYPE>
 		<FEATURE>root</FEATURE>
     	</CONS-1>
+        <!--<CONS-2>
+        <TYPE>Token</TYPE>
+        <FEATURE>orth</FEATURE>
+        </CONS-2>
+        <CONS-3
+        <TYPE>Token</TYPE>
+        <FEATURE>string</FEATURE>
+        </CONS-3> to check if that improves something-->
     </NGRAM>
     <ATTRIBUTE>  
         <NAME>Class</NAME>  
