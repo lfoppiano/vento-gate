@@ -1,11 +1,12 @@
 package org.vento.semantic.sentiment;
 
-import gate.util.GateException;
-import org.junit.Before;
+import gate.util.GateException
+import org.junit.Before
 import org.junit.Test
 import org.vento.gate.GateBatchProcessing
 import gate.Document
-import gate.Annotation;
+import gate.Annotation
+import gate.Factory
 
 /**
  * Created by IntelliJ IDEA.
@@ -18,8 +19,8 @@ public class SentiBatchProcessingImplTest {
     
     GateBatchProcessing batchLearning;
     GateBatchProcessing batchClassification;
-    File gateHome = new File("/home/mpolojko/GATE_Developer_7.0");
-    //File gateHome = new File("/Applications/GATE_Developer_7.0");
+    //File gateHome = new File("/home/mpolojko/GATE_Developer_7.0");
+    File gateHome = new File("/Applications/GATE_Developer_7.0");
     //File gateHome = new File("/opt/GATE_7.0");
 
 
@@ -45,8 +46,8 @@ public class SentiBatchProcessingImplTest {
     public void testEnd2EndLearning() throws Exception {
         setUpLearning();
 
-        File corpusDirectory = new File("/home/mpolojko/Desktop/realLearningInput/");
-        //File corpusDirectory = new File("/Users/Martin/Desktop/learningTest/realLearningInput/");
+        //File corpusDirectory = new File("/home/mpolojko/Desktop/realLearningInput/");
+        File corpusDirectory = new File("/Users/Martin/Desktop/realLearningInput/");
         //File corpusDirectory = new File("/home/lfoppiano/develop/bi/batch_learning_GATE_resources/realLearningInput");
 
         println "start loading"
@@ -66,9 +67,8 @@ public class SentiBatchProcessingImplTest {
     public void testEnd2EndLearningSingular() throws Exception {
         setUpLearning();
 
-        File corpusDirectory = new File("/Users/Martin/Desktop/learningTest/realLearningInput/");
+        File corpusDirectory = new File("/Users/Martin/Desktop/realLearningInput/");
         //File corpusDirectory = new File("/home/lfoppiano/develop/bi/batch_learning_GATE_resources/realLearningInput");
-
 
         println "start loading"
 
@@ -92,8 +92,10 @@ public class SentiBatchProcessingImplTest {
     public void testEnd2EndClassification() throws Exception {
         setUpClassification()
 
-        File corpusDirectory = new File(this.getClass().getResource("/gate-project-classification/classification-input/").toURI());
-        def stats = ['correct':0,'positiveMiss':0,'negativeMiss':0]
+        //File corpusDirectory = new File(this.getClass().getResource("/gate-project-classification/classification-input/").toURI());
+        File corpusDirectory = new File("/Users/Martin/Desktop/filteredClassificationInput/5.0/");
+
+        def stats = ['correct':0,'positiveMiss':0,'negativeMiss':0, 'notClassified':0, 'oneOff':0]
 
 
         println "start loading"
@@ -120,16 +122,26 @@ public class SentiBatchProcessingImplTest {
 
             String originalScoreStr = tempDoc.getContent().getContent(tempAnnotation.startNode.getOffset(),tempAnnotation.endNode.getOffset()).toString()
 
-            String classificationScoreStr = tempDoc.getAnnotations("Output").get("Review").iterator().next().getFeatures().get("score")
+            Iterator classificationScoreStr = tempDoc.getAnnotations("Output").get("Review").iterator()
 
-            float originalScore = originalScoreStr.toFloat()
+            if (classificationScoreStr.hasNext()){
 
-            float classificationScore = classificationScoreStr.toFloat()
+                float originalScore = originalScoreStr.toFloat()
 
-            if (originalScore>classificationScore) stats['negativeMiss']++
-                else if (originalScore<classificationScore) stats['positiveMiss']++
-                    else stats['correct']++
+                float classificationScore = classificationScoreStr.next().getFeatures().get("score").toFloat()
 
+                if (originalScore==classificationScore+1 ||  originalScore==classificationScore-1)
+                    stats['oneOff']++
+                else
+                    if (originalScore>classificationScore) stats['negativeMiss']++
+                        else if (originalScore<classificationScore) stats['positiveMiss']++
+                             else
+                                stats['correct']++
+            }
+            else
+                stats['notClassified']++
+
+            Factory.deleteResource(tempDoc)
         }
 
         int docsTotal = batchClassification.getCorpus().size()
