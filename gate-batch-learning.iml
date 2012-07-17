@@ -7,23 +7,18 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/groovy" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/resources" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/target/generated-sources/test-annotations" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/target/generated-sources/annotations" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target/classes" />
       <excludeFolder url="file://$MODULE_DIR$/target/generated-sources/groovy-stubs" />
+      <excludeFolder url="file://$MODULE_DIR$/target/surefire" />
+      <excludeFolder url="file://$MODULE_DIR$/target/surefire-reports" />
       <excludeFolder url="file://$MODULE_DIR$/target/test-classes" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="groovy-1.8.4" level="application" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$USER_HOME$/groovy-1.8.6/embeddable/groovy-all-1.8.6.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
+    <orderEntry type="library" name="groovy-1.8.6" level="application" />
+    <orderEntry type="library" name="groovy-1.8.6" level="application" />
     <orderEntry type="library" name="Maven: uk.ac.gate:gate-core:7.0" level="project" />
     <orderEntry type="library" name="Maven: uk.ac.gate:gate-asm:3.1" level="project" />
     <orderEntry type="library" name="Maven: uk.ac.gate:gate-compiler-jdt:3.7.1" level="project" />
