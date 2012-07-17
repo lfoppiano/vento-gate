@@ -22,7 +22,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.vento.semantic</groupId>
-    <artifactId>gate-batch-learning</artifactId>
+    <artifactId>vento-senti-gate</artifactId>
     <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
 
