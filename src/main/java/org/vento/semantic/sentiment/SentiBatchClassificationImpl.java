@@ -2,8 +2,6 @@ package org.vento.semantic.sentiment;
 
 import gate.*;
 import gate.corpora.DocumentImpl;
-import gate.creole.ExecutionException;
-import gate.persist.SerialDataStore;
 import gate.util.ExtensionFileFilter;
 import gate.util.GateException;
 import gate.util.persistence.PersistenceManager;
@@ -37,8 +35,7 @@ public class SentiBatchClassificationImpl implements GateBatchClassification{
     }
     */
 
-    @Override
-    public void init() throws GateException, IOException {
+    private void init() throws GateException, IOException {
 
         Gate.setGateHome(gateHome);
 

@@ -18,7 +18,7 @@ import java.net.URL;
  */
 public interface GateBatchClassification {
 
-    public void init() throws GateException, IOException;
+    //public void init() throws GateException, IOException;
 
     //public void addAllToCorpus(URL directory, String extension) throws IOException, GateException;
 
