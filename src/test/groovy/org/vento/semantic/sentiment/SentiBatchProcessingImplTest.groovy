@@ -7,6 +7,7 @@ import org.vento.gate.GateBatchProcessing
 import gate.Document
 import gate.Annotation
 import gate.Factory
+import groovy.xml.MarkupBuilder
 
 /**
  * Created by IntelliJ IDEA.
@@ -47,7 +48,7 @@ public class SentiBatchProcessingImplTest {
         setUpLearning();
 
         //File corpusDirectory = new File("/home/mpolojko/Desktop/realLearningInput/");
-        File corpusDirectory = new File("/Users/Martin/Desktop/realLearningInput/");
+        File corpusDirectory = new File("/Users/Martin/Desktop/learningInputShortReviews/");
         //File corpusDirectory = new File("/home/lfoppiano/develop/bi/batch_learning_GATE_resources/realLearningInput");
 
         println "start loading"
@@ -87,13 +88,61 @@ public class SentiBatchProcessingImplTest {
         println "learning session finished, took ${after-before} ms"
 
     }
+    @Test
+    public void testClassificationOutput() throws Exception {
+        setUpClassification()
+
+        File corpusDirectory = new File("/Users/Martin/Desktop/twitter/")
+        def classifiedEntriesOut = "/Users/Martin/Desktop/twitter/out/"
+
+        println "start loading"
+
+        batchClassification.addAllToCorpus(corpusDirectory.toURI().toURL(), "xml")
+
+        println "classification session started..."
+
+        def before = System.currentTimeMillis()
+        batchClassification.perform();
+        def after = System.currentTimeMillis()
+
+        println "classification session finished, took ${after-before} ms"
+
+        Iterator<Document> corpusIterator = batchClassification.getCorpus().iterator()
+
+        while (corpusIterator.hasNext()){
+
+            Document tempDoc = corpusIterator.next()
+
+            Iterator classificationScoreStr = tempDoc.getAnnotations("Output").get("Review").iterator()
+            Annotation tempAnnotation = tempDoc.getAnnotations("Original markups").get("text").iterator().next()
+
+            if (classificationScoreStr.hasNext()){
+
+                def classificationScore = classificationScoreStr.next().getFeatures().get("score")
+
+                String content = tempDoc.getContent().getContent(tempAnnotation.getStartNode().getOffset(),
+                        tempAnnotation.getEndNode().getOffset()).toString();
+
+                def classifiedFile = new FileWriter(classifiedEntriesOut + "${classificationScore}/" + tempDoc.getName()[0..-7])
+                def xml = new MarkupBuilder(classifiedFile)
+
+                xml.'twit'{
+                   text(content)
+                   score(classificationScore)
+                }
+            }
+        }
+    }
+
 
     @Test
     public void testEnd2EndClassification() throws Exception {
         setUpClassification()
 
+        //['1.0','2.0','3.0'].each{
+
         //File corpusDirectory = new File(this.getClass().getResource("/gate-project-classification/classification-input/").toURI());
-        File corpusDirectory = new File("/Users/Martin/Desktop/filteredClassificationInput/5.0/");
+        File corpusDirectory = new File("/Users/Martin/Desktop/amazonReviewsSorted/quickTest/2.0/")
 
         def stats = ['correct':0,'positiveMiss':0,'negativeMiss':0, 'notClassified':0, 'oneOff':0]
 
@@ -115,9 +164,9 @@ public class SentiBatchProcessingImplTest {
 
         println "classification session finished, took ${after-before} ms"
 
-        Iterator<Document> corpusIterator = batchClassification.getCorpus().iterator();
+        Iterator<Document> corpusIterator = batchClassification.getCorpus().iterator()
         while (corpusIterator.hasNext()){
-            Document tempDoc = corpusIterator.next();
+            Document tempDoc = corpusIterator.next()
             Annotation tempAnnotation = tempDoc.getAnnotations("Original markups").get("score").iterator().next()
 
             String originalScoreStr = tempDoc.getContent().getContent(tempAnnotation.startNode.getOffset(),tempAnnotation.endNode.getOffset()).toString()
@@ -149,6 +198,7 @@ public class SentiBatchProcessingImplTest {
         stats.each {label,number->
             println "${label}: ${(number/docsTotal)*100}"
         }
+      //}
     }
 
 }
