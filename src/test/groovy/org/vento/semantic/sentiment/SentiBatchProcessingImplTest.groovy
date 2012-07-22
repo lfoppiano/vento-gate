@@ -43,7 +43,6 @@ public class SentiBatchProcessingImplTest {
         batchClassification = new SentiBatchProcessingImpl(gateHome, gateConfigFile, dataStore, "classificationCorpus");
     }
 
-    @Test
     public void testEnd2EndLearning() throws Exception {
         setUpLearning();
 
@@ -64,7 +63,6 @@ public class SentiBatchProcessingImplTest {
         println "learning session finished, took ${after-before} ms"
     }
 
-    @Test
     public void testEnd2EndLearningSingular() throws Exception {
         setUpLearning();
 
@@ -88,7 +86,7 @@ public class SentiBatchProcessingImplTest {
         println "learning session finished, took ${after-before} ms"
 
     }
-    @Test
+
     public void testClassificationOutput() throws Exception {
         setUpClassification()
 
@@ -134,8 +132,6 @@ public class SentiBatchProcessingImplTest {
         }
     }
 
-
-    @Test
     public void testEnd2EndClassification() throws Exception {
         setUpClassification()
 
