@@ -23,7 +23,7 @@ class SentiBatchClassificationImplTest {
     }
 
 
-    @Test
+
     public void testSimpleClassify() {
           initialize()
 
