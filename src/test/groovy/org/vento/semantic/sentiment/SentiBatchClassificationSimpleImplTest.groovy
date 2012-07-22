@@ -17,8 +17,8 @@ class SentiBatchClassificationSimpleImplTest {
     public void initialize() {
 
         simpleBatchClassification = new SentiBatchClassificationSimpleImpl()
-        simpleBatchClassification.setNegativeWordFile(new File('/Users/Martin/Dropbox/MarcinShare/testData/qwordnet-0.3/negative_adj_list.txt'))
-        simpleBatchClassification.setPositiveWordFile(new File('/Users/Martin/Dropbox/MarcinShare/testData/qwordnet-0.3/positive_adj_list.txt'))
+        simpleBatchClassification.setNegativeWordFile(new File(this.getClass().getResource('negative_adj_list.txt').getPath()))
+        simpleBatchClassification.setPositiveWordFile(new File(this.getClass().getResource('positive_adj_list.txt').getPath()))
     }
 
 
