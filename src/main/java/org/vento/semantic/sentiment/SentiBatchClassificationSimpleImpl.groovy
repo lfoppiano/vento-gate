@@ -62,19 +62,11 @@ public class SentiBatchClassificationSimpleImpl implements SimpleBatchClassifica
         return classificationScore;
     }
 
-    //public File getNegativeWordFile() {
-    //    return negativeWordFile;
-    //}
-
-    public void setNegativeWordFile(File positiveWordFile) {
-        this.negativeWordFile = positiveWordFile;
+    public void setNegativeWordFile(String negativeWordFilePath) {
+        this.negativeWordFile = new File(negativeWordFile);
     }
 
-    //public File getPositiveWordFile() {
-    //    return positiveWordFile;
-    //}
-
-    public void setPositiveWordFile(File positiveWordFile) {
-        this.positiveWordFile = positiveWordFile;
+    public void setPositiveWordFile(String positiveWordFilePath) {
+        this.positiveWordFile = new File(positiveWordFile);
     }
 }

@@ -5,6 +5,8 @@ import gate.corpora.DocumentImpl;
 import gate.util.ExtensionFileFilter;
 import gate.util.GateException;
 import gate.util.persistence.PersistenceManager;
+import org.apache.camel.Exchange;
+import org.apache.camel.Processor;
 import org.vento.gate.GateBatchClassification;
 
 import java.io.File;
@@ -20,7 +22,7 @@ import java.util.Iterator;
  * Time: 18:23
  * To change this template use File | Settings | File Templates.
  */
-public class SentiBatchClassificationImpl implements GateBatchClassification{
+public class SentiBatchClassificationImpl implements GateBatchClassification, Processor {
 
     private CorpusController application;
     private Corpus documentCorpus;
@@ -29,11 +31,13 @@ public class SentiBatchClassificationImpl implements GateBatchClassification{
     private File gateConfigFile;
     private String corpusName;
 
-    /* constructor not required
-    public SentiBatchClassificationImpl(File gateHome, File projectConfigFile, String dataStoreDir, String corpusName) throws IOException, GateException {
-        init(gateHome, projectConfigFile, dataStoreDir, corpusName);
+    public SentiBatchClassificationImpl(String gateHome, String gateConfigFile, String corpusName) throws IOException, GateException {
+        this.setGateHome(new File(gateHome));
+        this.setGateConfigFile(new File(gateConfigFile));
+        this.setCorpusName(corpusName);
+
+        init();
     }
-    */
 
     private void init() throws GateException, IOException {
 
@@ -56,7 +60,6 @@ public class SentiBatchClassificationImpl implements GateBatchClassification{
         //    a new persisent corpus is returned
         persistentCorpus = (Corpus) persistentDS.adopt(corpus, null);
         persistentDS.sync(persistentCorpus);
-
         */
 
         documentCorpus = Factory.newCorpus(corpusName);
@@ -165,5 +168,10 @@ public class SentiBatchClassificationImpl implements GateBatchClassification{
 
     public void setCorpusName(String corpusName) {
         this.corpusName = corpusName;
+    }
+
+    @Override
+    public void process(Exchange exchange) throws Exception {
+        //To change body of implemented methods use File | Settings | File Templates.
     }
 }
