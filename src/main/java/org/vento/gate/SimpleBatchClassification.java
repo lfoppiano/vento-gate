@@ -1,5 +1,6 @@
 package org.vento.gate;
 
+import gate.util.GateException;
 import java.io.IOException;
 
 /**
@@ -19,6 +20,6 @@ public interface SimpleBatchClassification {
 
     //public File classify(File file, String encoding, String mimeType) throws IOException, GateException;
 
-    public double simpleClassify(String toCheck) throws IOException;
+    public double simpleClassify(String toCheck) throws IOException, GateException;
 
 }

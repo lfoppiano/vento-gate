@@ -35,7 +35,7 @@ public class SentiBatchClassificationSimpleImpl implements SimpleBatchClassifica
         initialized = true
     }
 
-    public double simpleClassify(String toClassify) throws IOException {
+    public double simpleClassify(String messageToClassify) throws IOException {
 
         def totalWordsCount = 0
         def negativeWordsCount = 0
@@ -45,7 +45,7 @@ public class SentiBatchClassificationSimpleImpl implements SimpleBatchClassifica
 
         if (!initialized) this.init()
 
-        toClassify.split(' ').each{word->
+        messageToClassify.split(' ').each{word->
 
             if (negativeWordList.contains(word)) negativeWordsCount++
             if (positiveWordList.contains(word)) positiveWordsCount++

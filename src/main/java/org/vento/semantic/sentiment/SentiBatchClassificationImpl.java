@@ -5,9 +5,12 @@ import gate.corpora.DocumentImpl;
 import gate.util.ExtensionFileFilter;
 import gate.util.GateException;
 import gate.util.persistence.PersistenceManager;
-import org.vento.gate.GateBatchClassification;
+import org.apache.commons.io.output.FileWriterWithEncoding;
+import org.vento.gate.SimpleBatchClassification;
 
+import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -20,7 +23,7 @@ import java.util.Iterator;
  * Time: 18:23
  * To change this template use File | Settings | File Templates.
  */
-public class SentiBatchClassificationImpl implements GateBatchClassification{
+public class SentiBatchClassificationImpl implements SimpleBatchClassification{
 
     private CorpusController application;
     private Corpus documentCorpus;
@@ -96,13 +99,20 @@ public class SentiBatchClassificationImpl implements GateBatchClassification{
 
     }
 
-    public double simpleClassify(File file, String encoding, String mimeType) throws IOException, GateException {
+    public double simpleClassify(String messageToClassify) throws IOException, GateException {
 
         double classificationScore = 0.0;
 
         if (!Gate.isInitialised()) init();
+
+        File tempFile = new File("tempClassificationImp" + "_" + Gate.genSym() + ".xml");
+        FileWriterWithEncoding tempWriter = new FileWriterWithEncoding(tempFile,"UTF-8");
+        tempWriter.write("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<twit>\n<text>" + messageToClassify + "</text>\n</twit>");
+        tempWriter.flush();
+        tempWriter.close();
+
         documentCorpus.clear();
-        addToCorpus(file,encoding,mimeType);
+        addToCorpus(tempFile,"UTF-8","text/xml");
         application.execute();
 
         Document classifiedDoc = documentCorpus.iterator().next();
@@ -114,6 +124,7 @@ public class SentiBatchClassificationImpl implements GateBatchClassification{
             classificationScore = Float.parseFloat((String)classificationScoreStr.next().getFeatures().get("score"));
         }
 
+        tempFile.delete();
         return classificationScore;
     }
 

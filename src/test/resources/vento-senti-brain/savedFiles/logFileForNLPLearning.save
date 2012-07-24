@@ -1,0 +1,497 @@
+Jul 18, 2012 12:32:13 AM: 
+
+*************************
+A new session for NLP learning is starting.
+The initiliased time of NLP learning: Wed Jul 18 00:32:13 CEST 2012
+Working directory: /Users/Martin/IdeaProjects/gate-batch-learning/target/test-classes/vento-senti-brain
+The feature files and models are saved at: /Users/Martin/IdeaProjects/gate-batch-learning/target/test-classes/vento-senti-brain/savedFiles
+Learner name: PAUM
+Learner nick name: PAUM
+Learner parameter settings: PAUM
+Surroud mode (or chunk learning): false
+Jul 18, 2012 12:32:25 AM: 
+*** A new run starts.
+Jul 18, 2012 12:32:25 AM: 
+The execution time (pre-processing the first document): Wed Jul 18 00:32:25 CEST 2012
+Jul 18, 2012 12:32:27 AM: 
+*** A new run starts.
+Jul 18, 2012 12:32:27 AM: 
+The execution time (pre-processing the first document): Wed Jul 18 00:32:27 CEST 2012
+Jul 18, 2012 12:32:29 AM: 
+*** A new run starts.
+Jul 18, 2012 12:32:29 AM: 
+The execution time (pre-processing the first document): Wed Jul 18 00:32:29 CEST 2012
+Jul 18, 2012 12:32:30 AM: 
+*** A new run starts.
+Jul 18, 2012 12:32:30 AM: 
+The execution time (pre-processing the first document): Wed Jul 18 00:32:30 CEST 2012
+Jul 18, 2012 12:32:31 AM: 
+*** A new run starts.
+Jul 18, 2012 12:32:31 AM: 
+The execution time (pre-processing the first document): Wed Jul 18 00:32:31 CEST 2012
+Jul 18, 2012 12:38:50 AM: 
+
+*************************
+A new session for NLP learning is starting.
+The initiliased time of NLP learning: Wed Jul 18 00:38:50 CEST 2012
+Working directory: /Users/Martin/IdeaProjects/gate-batch-learning/target/test-classes/vento-senti-brain
+The feature files and models are saved at: /Users/Martin/IdeaProjects/gate-batch-learning/target/test-classes/vento-senti-brain/savedFiles
+Learner name: PAUM
+Learner nick name: PAUM
+Learner parameter settings: PAUM
+Surroud mode (or chunk learning): false
+Jul 18, 2012 12:39:42 AM: 
+*** A new run starts.
+Jul 18, 2012 12:39:42 AM: 
+The execution time (pre-processing the first document): Wed Jul 18 00:39:42 CEST 2012
+Jul 18, 2012 12:41:14 AM: The learning start at Wed Jul 18 00:41:14 CEST 2012
+Jul 18, 2012 12:41:14 AM: The number of documents in dataset: 7299
+Jul 18, 2012 12:41:14 AM: ** MITRAINING mode:
+Jul 18, 2012 12:43:25 AM: 
+Training starts.
+
+Jul 18, 2012 12:43:25 AM: Multi to binary conversion.
+Jul 18, 2012 12:43:26 AM: The learners: PAUM
+Jul 18, 2012 12:43:28 AM: The number of classes in dataset: 3
+Jul 18, 2012 12:43:28 AM: total Number of classes for learning is 3
+Jul 18, 2012 12:43:28 AM: One against others for multi to binary class conversion.
+Jul 18, 2012 12:43:28 AM: Running tasks using executor java.util.concurrent.ThreadPoolExecutor@234bdb27
+Jul 18, 2012 12:43:31 AM: Training time for class 2: 3163ms
+Jul 18, 2012 12:43:31 AM: Training time for class 1: 3207ms
+Jul 18, 2012 12:43:31 AM: Training time for class 3: 3239ms
+Jul 18, 2012 12:43:31 AM: This learning session finished!.
+Jul 18, 2012 12:47:59 AM: 
+
+*************************
+A new session for NLP learning is starting.
+The initiliased time of NLP learning: Wed Jul 18 00:47:59 CEST 2012
+Working directory: /Users/Martin/IdeaProjects/gate-batch-learning/target/test-classes/vento-senti-brain
+The feature files and models are saved at: /Users/Martin/IdeaProjects/gate-batch-learning/target/test-classes/vento-senti-brain/savedFiles
+Learner name: PAUM
+Learner nick name: PAUM
+Learner parameter settings: PAUM
+Surroud mode (or chunk learning): false
+Jul 18, 2012 12:48:05 AM: 
+*** A new run starts.
+Jul 18, 2012 12:48:05 AM: 
+The execution time (pre-processing the first document): Wed Jul 18 00:48:05 CEST 2012
+Jul 18, 2012 12:48:05 AM: ** Application mode for document from 0 to 1(not included):
+Jul 18, 2012 12:48:05 AM: Creating temp directory for application-mode files
+Jul 18, 2012 12:48:06 AM: 
+Application starts.
+Jul 18, 2012 12:48:06 AM: Multi to binary conversion.
+Jul 18, 2012 12:48:06 AM: The learners: PAUM
+Jul 18, 2012 12:48:06 AM: One against others for multi to binary class conversion.
+Number of classes in model: 3
+Jul 18, 2012 12:48:09 AM: Application time for class: 2667ms
+Jul 18, 2012 12:48:09 AM: The learning start at Wed Jul 18 00:48:09 CEST 2012
+Jul 18, 2012 12:48:09 AM: The number of documents in dataset: 1
+Jul 18, 2012 12:48:09 AM: This learning session finished!.
+Jul 18, 2012 12:48:10 AM: 
+*** A new run starts.
+Jul 18, 2012 12:48:10 AM: 
+The execution time (pre-processing the first document): Wed Jul 18 00:48:10 CEST 2012
+Jul 18, 2012 12:48:10 AM: ** Application mode for document from 0 to 1(not included):
+Jul 18, 2012 12:48:10 AM: 
+Application starts.
+Jul 18, 2012 12:48:10 AM: Multi to binary conversion.
+Jul 18, 2012 12:48:10 AM: The learners: PAUM
+Jul 18, 2012 12:48:10 AM: One against others for multi to binary class conversion.
+Number of classes in model: 3
+Jul 18, 2012 12:48:10 AM: Application time for class: 202ms
+Jul 18, 2012 12:48:10 AM: The learning start at Wed Jul 18 00:48:10 CEST 2012
+Jul 18, 2012 12:48:10 AM: The number of documents in dataset: 1
+Jul 18, 2012 12:48:10 AM: This learning session finished!.
+Jul 18, 2012 12:48:11 AM: 
+*** A new run starts.
+Jul 18, 2012 12:48:11 AM: 
+The execution time (pre-processing the first document): Wed Jul 18 00:48:11 CEST 2012
+Jul 18, 2012 12:48:11 AM: ** Application mode for document from 0 to 1(not included):
+Jul 18, 2012 12:48:11 AM: 
+Application starts.
+Jul 18, 2012 12:48:11 AM: Multi to binary conversion.
+Jul 18, 2012 12:48:11 AM: The learners: PAUM
+Jul 18, 2012 12:48:11 AM: One against others for multi to binary class conversion.
+Number of classes in model: 3
+Jul 18, 2012 12:48:11 AM: Application time for class: 147ms
+Jul 18, 2012 12:48:11 AM: The learning start at Wed Jul 18 00:48:11 CEST 2012
+Jul 18, 2012 12:48:11 AM: The number of documents in dataset: 1
+Jul 18, 2012 12:48:11 AM: This learning session finished!.
+Jul 18, 2012 12:48:13 AM: 
+*** A new run starts.
+Jul 18, 2012 12:48:13 AM: 
+The execution time (pre-processing the first document): Wed Jul 18 00:48:13 CEST 2012
+Jul 18, 2012 12:48:13 AM: ** Application mode for document from 0 to 1(not included):
+Jul 18, 2012 12:48:13 AM: 
+Application starts.
+Jul 18, 2012 12:48:13 AM: Multi to binary conversion.
+Jul 18, 2012 12:48:13 AM: The learners: PAUM
+Jul 18, 2012 12:48:13 AM: One against others for multi to binary class conversion.
+Number of classes in model: 3
+Jul 18, 2012 12:48:13 AM: Application time for class: 216ms
+Jul 18, 2012 12:48:13 AM: The learning start at Wed Jul 18 00:48:13 CEST 2012
+Jul 18, 2012 12:48:13 AM: The number of documents in dataset: 1
+Jul 18, 2012 12:48:13 AM: This learning session finished!.
+Jul 18, 2012 12:48:15 AM: 
+*** A new run starts.
+Jul 18, 2012 12:48:15 AM: 
+The execution time (pre-processing the first document): Wed Jul 18 00:48:15 CEST 2012
+Jul 18, 2012 12:48:15 AM: ** Application mode for document from 0 to 1(not included):
+Jul 18, 2012 12:48:15 AM: 
+Application starts.
+Jul 18, 2012 12:48:15 AM: Multi to binary conversion.
+Jul 18, 2012 12:48:15 AM: The learners: PAUM
+Jul 18, 2012 12:48:15 AM: One against others for multi to binary class conversion.
+Number of classes in model: 3
+Jul 18, 2012 12:48:15 AM: Application time for class: 66ms
+Jul 18, 2012 12:48:15 AM: The learning start at Wed Jul 18 00:48:15 CEST 2012
+Jul 18, 2012 12:48:15 AM: The number of documents in dataset: 1
+Jul 18, 2012 12:48:15 AM: This learning session finished!.
+Jul 24, 2012 10:43:41 PM: 
+
+*************************
+A new session for NLP learning is starting.
+The initiliased time of NLP learning: Tue Jul 24 22:43:41 CEST 2012
+Working directory: /Users/Martin/IdeaProjects/gate-batch-learning/target/test-classes/vento-senti-brain
+The feature files and models are saved at: /Users/Martin/IdeaProjects/gate-batch-learning/target/test-classes/vento-senti-brain/savedFiles
+Learner name: PAUM
+Learner nick name: PAUM
+Learner parameter settings: PAUM
+Surroud mode (or chunk learning): false
+Jul 24, 2012 11:22:44 PM: 
+*** A new run starts.
+Jul 24, 2012 11:22:44 PM: 
+The execution time (pre-processing the first document): Tue Jul 24 23:22:44 CEST 2012
+Jul 24, 2012 11:22:44 PM: ** Application mode for document from 0 to 1(not included):
+Jul 24, 2012 11:22:44 PM: Creating temp directory for application-mode files
+Jul 24, 2012 11:22:45 PM: 
+Application starts.
+Jul 24, 2012 11:22:45 PM: Multi to binary conversion.
+Jul 24, 2012 11:22:45 PM: The learners: PAUM
+Jul 24, 2012 11:22:45 PM: One against others for multi to binary class conversion.
+Number of classes in model: 3
+Jul 24, 2012 11:22:45 PM: Application time for class: 247ms
+Jul 24, 2012 11:22:45 PM: The learning start at Tue Jul 24 23:22:45 CEST 2012
+Jul 24, 2012 11:22:45 PM: The number of documents in dataset: 1
+Jul 24, 2012 11:22:45 PM: This learning session finished!.
+Jul 24, 2012 11:22:50 PM: 
+*** A new run starts.
+Jul 24, 2012 11:22:50 PM: 
+The execution time (pre-processing the first document): Tue Jul 24 23:22:50 CEST 2012
+Jul 24, 2012 11:22:50 PM: ** Application mode for document from 0 to 1(not included):
+Jul 24, 2012 11:22:50 PM: 
+Application starts.
+Jul 24, 2012 11:22:50 PM: Multi to binary conversion.
+Jul 24, 2012 11:22:50 PM: The learners: PAUM
+Jul 24, 2012 11:22:50 PM: One against others for multi to binary class conversion.
+Number of classes in model: 3
+Jul 24, 2012 11:22:50 PM: Application time for class: 108ms
+Jul 24, 2012 11:22:50 PM: The learning start at Tue Jul 24 23:22:50 CEST 2012
+Jul 24, 2012 11:22:50 PM: The number of documents in dataset: 1
+Jul 24, 2012 11:22:50 PM: This learning session finished!.
+Jul 24, 2012 11:22:51 PM: 
+*** A new run starts.
+Jul 24, 2012 11:22:51 PM: 
+The execution time (pre-processing the first document): Tue Jul 24 23:22:51 CEST 2012
+Jul 24, 2012 11:22:51 PM: ** Application mode for document from 0 to 1(not included):
+Jul 24, 2012 11:22:51 PM: 
+Application starts.
+Jul 24, 2012 11:22:51 PM: Multi to binary conversion.
+Jul 24, 2012 11:22:51 PM: The learners: PAUM
+Jul 24, 2012 11:22:51 PM: One against others for multi to binary class conversion.
+Number of classes in model: 3
+Jul 24, 2012 11:22:51 PM: Application time for class: 148ms
+Jul 24, 2012 11:22:51 PM: The learning start at Tue Jul 24 23:22:51 CEST 2012
+Jul 24, 2012 11:22:51 PM: The number of documents in dataset: 1
+Jul 24, 2012 11:22:51 PM: This learning session finished!.
+Jul 24, 2012 11:22:52 PM: 
+*** A new run starts.
+Jul 24, 2012 11:22:52 PM: 
+The execution time (pre-processing the first document): Tue Jul 24 23:22:52 CEST 2012
+Jul 24, 2012 11:22:52 PM: ** Application mode for document from 0 to 1(not included):
+Jul 24, 2012 11:22:52 PM: 
+Application starts.
+Jul 24, 2012 11:22:52 PM: Multi to binary conversion.
+Jul 24, 2012 11:22:52 PM: The learners: PAUM
+Jul 24, 2012 11:22:52 PM: One against others for multi to binary class conversion.
+Number of classes in model: 3
+Jul 24, 2012 11:22:52 PM: Application time for class: 84ms
+Jul 24, 2012 11:22:52 PM: The learning start at Tue Jul 24 23:22:52 CEST 2012
+Jul 24, 2012 11:22:52 PM: The number of documents in dataset: 1
+Jul 24, 2012 11:22:52 PM: This learning session finished!.
+Jul 24, 2012 11:22:52 PM: 
+*** A new run starts.
+Jul 24, 2012 11:22:52 PM: 
+The execution time (pre-processing the first document): Tue Jul 24 23:22:52 CEST 2012
+Jul 24, 2012 11:22:53 PM: ** Application mode for document from 0 to 1(not included):
+Jul 24, 2012 11:22:53 PM: 
+Application starts.
+Jul 24, 2012 11:22:53 PM: Multi to binary conversion.
+Jul 24, 2012 11:22:53 PM: The learners: PAUM
+Jul 24, 2012 11:22:53 PM: One against others for multi to binary class conversion.
+Number of classes in model: 3
+Jul 24, 2012 11:22:53 PM: Application time for class: 63ms
+Jul 24, 2012 11:22:53 PM: The learning start at Tue Jul 24 23:22:53 CEST 2012
+Jul 24, 2012 11:22:53 PM: The number of documents in dataset: 1
+Jul 24, 2012 11:22:53 PM: This learning session finished!.
+Jul 24, 2012 11:23:17 PM: 
+
+*************************
+A new session for NLP learning is starting.
+The initiliased time of NLP learning: Tue Jul 24 23:23:16 CEST 2012
+Working directory: /Users/Martin/IdeaProjects/gate-batch-learning/target/test-classes/vento-senti-brain
+The feature files and models are saved at: /Users/Martin/IdeaProjects/gate-batch-learning/target/test-classes/vento-senti-brain/savedFiles
+Learner name: PAUM
+Learner nick name: PAUM
+Learner parameter settings: PAUM
+Surroud mode (or chunk learning): false
+Jul 24, 2012 11:23:22 PM: 
+*** A new run starts.
+Jul 24, 2012 11:23:22 PM: 
+The execution time (pre-processing the first document): Tue Jul 24 23:23:22 CEST 2012
+Jul 24, 2012 11:23:22 PM: ** Application mode for document from 0 to 1(not included):
+Jul 24, 2012 11:23:22 PM: Creating temp directory for application-mode files
+Jul 24, 2012 11:23:22 PM: 
+Application starts.
+Jul 24, 2012 11:23:22 PM: Multi to binary conversion.
+Jul 24, 2012 11:23:23 PM: The learners: PAUM
+Jul 24, 2012 11:23:23 PM: One against others for multi to binary class conversion.
+Number of classes in model: 3
+Jul 24, 2012 11:23:25 PM: Application time for class: 1978ms
+Jul 24, 2012 11:23:25 PM: The learning start at Tue Jul 24 23:23:25 CEST 2012
+Jul 24, 2012 11:23:25 PM: The number of documents in dataset: 1
+Jul 24, 2012 11:23:25 PM: This learning session finished!.
+Jul 24, 2012 11:23:25 PM: 
+*** A new run starts.
+Jul 24, 2012 11:23:25 PM: 
+The execution time (pre-processing the first document): Tue Jul 24 23:23:25 CEST 2012
+Jul 24, 2012 11:23:25 PM: ** Application mode for document from 0 to 1(not included):
+Jul 24, 2012 11:23:25 PM: 
+Application starts.
+Jul 24, 2012 11:23:25 PM: Multi to binary conversion.
+Jul 24, 2012 11:23:25 PM: The learners: PAUM
+Jul 24, 2012 11:23:25 PM: One against others for multi to binary class conversion.
+Number of classes in model: 3
+Jul 24, 2012 11:23:26 PM: Application time for class: 501ms
+Jul 24, 2012 11:23:26 PM: The learning start at Tue Jul 24 23:23:26 CEST 2012
+Jul 24, 2012 11:23:26 PM: The number of documents in dataset: 1
+Jul 24, 2012 11:23:26 PM: This learning session finished!.
+Jul 24, 2012 11:23:27 PM: 
+*** A new run starts.
+Jul 24, 2012 11:23:27 PM: 
+The execution time (pre-processing the first document): Tue Jul 24 23:23:27 CEST 2012
+Jul 24, 2012 11:23:27 PM: ** Application mode for document from 0 to 1(not included):
+Jul 24, 2012 11:23:27 PM: 
+Application starts.
+Jul 24, 2012 11:23:27 PM: Multi to binary conversion.
+Jul 24, 2012 11:23:27 PM: The learners: PAUM
+Jul 24, 2012 11:23:27 PM: One against others for multi to binary class conversion.
+Number of classes in model: 3
+Jul 24, 2012 11:23:27 PM: Application time for class: 71ms
+Jul 24, 2012 11:23:27 PM: The learning start at Tue Jul 24 23:23:27 CEST 2012
+Jul 24, 2012 11:23:27 PM: The number of documents in dataset: 1
+Jul 24, 2012 11:23:27 PM: This learning session finished!.
+Jul 24, 2012 11:23:27 PM: 
+*** A new run starts.
+Jul 24, 2012 11:23:27 PM: 
+The execution time (pre-processing the first document): Tue Jul 24 23:23:27 CEST 2012
+Jul 24, 2012 11:23:27 PM: ** Application mode for document from 0 to 1(not included):
+Jul 24, 2012 11:23:27 PM: 
+Application starts.
+Jul 24, 2012 11:23:27 PM: Multi to binary conversion.
+Jul 24, 2012 11:23:27 PM: The learners: PAUM
+Jul 24, 2012 11:23:27 PM: One against others for multi to binary class conversion.
+Number of classes in model: 3
+Jul 24, 2012 11:23:27 PM: Application time for class: 114ms
+Jul 24, 2012 11:23:27 PM: The learning start at Tue Jul 24 23:23:27 CEST 2012
+Jul 24, 2012 11:23:27 PM: The number of documents in dataset: 1
+Jul 24, 2012 11:23:27 PM: This learning session finished!.
+Jul 24, 2012 11:23:28 PM: 
+*** A new run starts.
+Jul 24, 2012 11:23:28 PM: 
+The execution time (pre-processing the first document): Tue Jul 24 23:23:28 CEST 2012
+Jul 24, 2012 11:23:28 PM: ** Application mode for document from 0 to 1(not included):
+Jul 24, 2012 11:23:28 PM: 
+Application starts.
+Jul 24, 2012 11:23:28 PM: Multi to binary conversion.
+Jul 24, 2012 11:23:28 PM: The learners: PAUM
+Jul 24, 2012 11:23:28 PM: One against others for multi to binary class conversion.
+Number of classes in model: 3
+Jul 24, 2012 11:23:28 PM: Application time for class: 60ms
+Jul 24, 2012 11:23:28 PM: The learning start at Tue Jul 24 23:23:28 CEST 2012
+Jul 24, 2012 11:23:28 PM: The number of documents in dataset: 1
+Jul 24, 2012 11:23:28 PM: This learning session finished!.
+Jul 24, 2012 11:26:17 PM: 
+
+*************************
+A new session for NLP learning is starting.
+The initiliased time of NLP learning: Tue Jul 24 23:26:16 CEST 2012
+Working directory: /Users/Martin/IdeaProjects/gate-batch-learning/target/test-classes/vento-senti-brain
+The feature files and models are saved at: /Users/Martin/IdeaProjects/gate-batch-learning/target/test-classes/vento-senti-brain/savedFiles
+Learner name: PAUM
+Learner nick name: PAUM
+Learner parameter settings: PAUM
+Surroud mode (or chunk learning): false
+Jul 24, 2012 11:26:22 PM: 
+*** A new run starts.
+Jul 24, 2012 11:26:22 PM: 
+The execution time (pre-processing the first document): Tue Jul 24 23:26:22 CEST 2012
+Jul 24, 2012 11:26:22 PM: ** Application mode for document from 0 to 1(not included):
+Jul 24, 2012 11:26:22 PM: Creating temp directory for application-mode files
+Jul 24, 2012 11:26:23 PM: 
+Application starts.
+Jul 24, 2012 11:26:23 PM: Multi to binary conversion.
+Jul 24, 2012 11:26:23 PM: The learners: PAUM
+Jul 24, 2012 11:26:23 PM: One against others for multi to binary class conversion.
+Number of classes in model: 3
+Jul 24, 2012 11:26:25 PM: Application time for class: 2122ms
+Jul 24, 2012 11:26:25 PM: The learning start at Tue Jul 24 23:26:25 CEST 2012
+Jul 24, 2012 11:26:25 PM: The number of documents in dataset: 1
+Jul 24, 2012 11:26:25 PM: This learning session finished!.
+Jul 24, 2012 11:26:26 PM: 
+*** A new run starts.
+Jul 24, 2012 11:26:26 PM: 
+The execution time (pre-processing the first document): Tue Jul 24 23:26:26 CEST 2012
+Jul 24, 2012 11:26:26 PM: ** Application mode for document from 0 to 1(not included):
+Jul 24, 2012 11:26:26 PM: 
+Application starts.
+Jul 24, 2012 11:26:26 PM: Multi to binary conversion.
+Jul 24, 2012 11:26:26 PM: The learners: PAUM
+Jul 24, 2012 11:26:26 PM: One against others for multi to binary class conversion.
+Number of classes in model: 3
+Jul 24, 2012 11:26:27 PM: Application time for class: 876ms
+Jul 24, 2012 11:26:27 PM: The learning start at Tue Jul 24 23:26:27 CEST 2012
+Jul 24, 2012 11:26:27 PM: The number of documents in dataset: 1
+Jul 24, 2012 11:26:27 PM: This learning session finished!.
+Jul 24, 2012 11:26:28 PM: 
+*** A new run starts.
+Jul 24, 2012 11:26:28 PM: 
+The execution time (pre-processing the first document): Tue Jul 24 23:26:28 CEST 2012
+Jul 24, 2012 11:26:28 PM: ** Application mode for document from 0 to 1(not included):
+Jul 24, 2012 11:26:28 PM: 
+Application starts.
+Jul 24, 2012 11:26:28 PM: Multi to binary conversion.
+Jul 24, 2012 11:26:28 PM: The learners: PAUM
+Jul 24, 2012 11:26:28 PM: One against others for multi to binary class conversion.
+Number of classes in model: 3
+Jul 24, 2012 11:26:28 PM: Application time for class: 93ms
+Jul 24, 2012 11:26:28 PM: The learning start at Tue Jul 24 23:26:28 CEST 2012
+Jul 24, 2012 11:26:28 PM: The number of documents in dataset: 1
+Jul 24, 2012 11:26:28 PM: This learning session finished!.
+Jul 24, 2012 11:26:28 PM: 
+*** A new run starts.
+Jul 24, 2012 11:26:28 PM: 
+The execution time (pre-processing the first document): Tue Jul 24 23:26:28 CEST 2012
+Jul 24, 2012 11:26:28 PM: ** Application mode for document from 0 to 1(not included):
+Jul 24, 2012 11:26:28 PM: 
+Application starts.
+Jul 24, 2012 11:26:28 PM: Multi to binary conversion.
+Jul 24, 2012 11:26:28 PM: The learners: PAUM
+Jul 24, 2012 11:26:29 PM: One against others for multi to binary class conversion.
+Number of classes in model: 3
+Jul 24, 2012 11:26:29 PM: Application time for class: 68ms
+Jul 24, 2012 11:26:29 PM: The learning start at Tue Jul 24 23:26:29 CEST 2012
+Jul 24, 2012 11:26:29 PM: The number of documents in dataset: 1
+Jul 24, 2012 11:26:29 PM: This learning session finished!.
+Jul 24, 2012 11:26:29 PM: 
+*** A new run starts.
+Jul 24, 2012 11:26:29 PM: 
+The execution time (pre-processing the first document): Tue Jul 24 23:26:29 CEST 2012
+Jul 24, 2012 11:26:29 PM: ** Application mode for document from 0 to 1(not included):
+Jul 24, 2012 11:26:29 PM: 
+Application starts.
+Jul 24, 2012 11:26:29 PM: Multi to binary conversion.
+Jul 24, 2012 11:26:29 PM: The learners: PAUM
+Jul 24, 2012 11:26:29 PM: One against others for multi to binary class conversion.
+Number of classes in model: 3
+Jul 24, 2012 11:26:29 PM: Application time for class: 57ms
+Jul 24, 2012 11:26:29 PM: The learning start at Tue Jul 24 23:26:29 CEST 2012
+Jul 24, 2012 11:26:29 PM: The number of documents in dataset: 1
+Jul 24, 2012 11:26:29 PM: This learning session finished!.
+Jul 24, 2012 11:28:05 PM: 
+
+*************************
+A new session for NLP learning is starting.
+The initiliased time of NLP learning: Tue Jul 24 23:28:04 CEST 2012
+Working directory: /Users/Martin/IdeaProjects/gate-batch-learning/target/test-classes/vento-senti-brain
+The feature files and models are saved at: /Users/Martin/IdeaProjects/gate-batch-learning/target/test-classes/vento-senti-brain/savedFiles
+Learner name: PAUM
+Learner nick name: PAUM
+Learner parameter settings: PAUM
+Surroud mode (or chunk learning): false
+Jul 24, 2012 11:28:10 PM: 
+*** A new run starts.
+Jul 24, 2012 11:28:10 PM: 
+The execution time (pre-processing the first document): Tue Jul 24 23:28:10 CEST 2012
+Jul 24, 2012 11:28:10 PM: ** Application mode for document from 0 to 1(not included):
+Jul 24, 2012 11:28:10 PM: Creating temp directory for application-mode files
+Jul 24, 2012 11:28:10 PM: 
+Application starts.
+Jul 24, 2012 11:28:10 PM: Multi to binary conversion.
+Jul 24, 2012 11:28:11 PM: The learners: PAUM
+Jul 24, 2012 11:28:11 PM: One against others for multi to binary class conversion.
+Number of classes in model: 3
+Jul 24, 2012 11:28:13 PM: Application time for class: 1989ms
+Jul 24, 2012 11:28:13 PM: The learning start at Tue Jul 24 23:28:13 CEST 2012
+Jul 24, 2012 11:28:13 PM: The number of documents in dataset: 1
+Jul 24, 2012 11:28:13 PM: This learning session finished!.
+Jul 24, 2012 11:28:13 PM: 
+*** A new run starts.
+Jul 24, 2012 11:28:13 PM: 
+The execution time (pre-processing the first document): Tue Jul 24 23:28:13 CEST 2012
+Jul 24, 2012 11:28:13 PM: ** Application mode for document from 0 to 1(not included):
+Jul 24, 2012 11:28:13 PM: 
+Application starts.
+Jul 24, 2012 11:28:13 PM: Multi to binary conversion.
+Jul 24, 2012 11:28:13 PM: The learners: PAUM
+Jul 24, 2012 11:28:13 PM: One against others for multi to binary class conversion.
+Number of classes in model: 3
+Jul 24, 2012 11:28:13 PM: Application time for class: 367ms
+Jul 24, 2012 11:28:13 PM: The learning start at Tue Jul 24 23:28:13 CEST 2012
+Jul 24, 2012 11:28:13 PM: The number of documents in dataset: 1
+Jul 24, 2012 11:28:13 PM: This learning session finished!.
+Jul 24, 2012 11:28:14 PM: 
+*** A new run starts.
+Jul 24, 2012 11:28:14 PM: 
+The execution time (pre-processing the first document): Tue Jul 24 23:28:14 CEST 2012
+Jul 24, 2012 11:28:14 PM: ** Application mode for document from 0 to 1(not included):
+Jul 24, 2012 11:28:14 PM: 
+Application starts.
+Jul 24, 2012 11:28:14 PM: Multi to binary conversion.
+Jul 24, 2012 11:28:14 PM: The learners: PAUM
+Jul 24, 2012 11:28:14 PM: One against others for multi to binary class conversion.
+Number of classes in model: 3
+Jul 24, 2012 11:28:14 PM: Application time for class: 59ms
+Jul 24, 2012 11:28:14 PM: The learning start at Tue Jul 24 23:28:14 CEST 2012
+Jul 24, 2012 11:28:14 PM: The number of documents in dataset: 1
+Jul 24, 2012 11:28:14 PM: This learning session finished!.
+Jul 24, 2012 11:28:14 PM: 
+*** A new run starts.
+Jul 24, 2012 11:28:14 PM: 
+The execution time (pre-processing the first document): Tue Jul 24 23:28:14 CEST 2012
+Jul 24, 2012 11:28:14 PM: ** Application mode for document from 0 to 1(not included):
+Jul 24, 2012 11:28:14 PM: 
+Application starts.
+Jul 24, 2012 11:28:14 PM: Multi to binary conversion.
+Jul 24, 2012 11:28:14 PM: The learners: PAUM
+Jul 24, 2012 11:28:14 PM: One against others for multi to binary class conversion.
+Number of classes in model: 3
+Jul 24, 2012 11:28:14 PM: Application time for class: 68ms
+Jul 24, 2012 11:28:14 PM: The learning start at Tue Jul 24 23:28:14 CEST 2012
+Jul 24, 2012 11:28:14 PM: The number of documents in dataset: 1
+Jul 24, 2012 11:28:14 PM: This learning session finished!.
+Jul 24, 2012 11:28:15 PM: 
+*** A new run starts.
+Jul 24, 2012 11:28:15 PM: 
+The execution time (pre-processing the first document): Tue Jul 24 23:28:15 CEST 2012
+Jul 24, 2012 11:28:15 PM: ** Application mode for document from 0 to 1(not included):
+Jul 24, 2012 11:28:15 PM: 
+Application starts.
+Jul 24, 2012 11:28:15 PM: Multi to binary conversion.
+Jul 24, 2012 11:28:15 PM: The learners: PAUM
+Jul 24, 2012 11:28:15 PM: One against others for multi to binary class conversion.
+Number of classes in model: 3
+Jul 24, 2012 11:28:15 PM: Application time for class: 58ms
+Jul 24, 2012 11:28:15 PM: The learning start at Tue Jul 24 23:28:15 CEST 2012
+Jul 24, 2012 11:28:15 PM: The number of documents in dataset: 1
+Jul 24, 2012 11:28:15 PM: This learning session finished!.
