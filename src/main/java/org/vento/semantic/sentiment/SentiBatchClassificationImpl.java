@@ -2,17 +2,14 @@ package org.vento.semantic.sentiment;
 
 import gate.*;
 import gate.corpora.DocumentImpl;
-import gate.util.ExtensionFileFilter;
 import gate.util.GateException;
 import gate.util.persistence.PersistenceManager;
-import org.apache.camel.Exchange;
-import org.apache.camel.Processor;
-import org.vento.gate.GateBatchClassification;
+import org.apache.commons.io.output.FileWriterWithEncoding;
+import org.vento.gate.SimpleBatchClassification;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.Iterator;
 
 /**
@@ -22,56 +19,33 @@ import java.util.Iterator;
  * Time: 18:23
  * To change this template use File | Settings | File Templates.
  */
-public class SentiBatchClassificationImpl implements GateBatchClassification, Processor {
+public class SentiBatchClassificationImpl implements SimpleBatchClassification{
 
     private CorpusController application;
     private Corpus documentCorpus;
-    //SerialDataStore persistentDS;
     private File gateHome;
     private File gateConfigFile;
     private String corpusName;
+    private boolean applicationInit = false;
 
-    public SentiBatchClassificationImpl(String gateHome, String gateConfigFile, String corpusName) throws IOException, GateException {
-        this.setGateHome(new File(gateHome));
-        this.setGateConfigFile(new File(gateConfigFile));
-        this.setCorpusName(corpusName);
-
-        init();
-    }
-
-    private void init() throws GateException, IOException {
+    private void gateInit() throws GateException {
 
         Gate.setGateHome(gateHome);
 
         // initialise GATE - this must be done before calling any GATE APIs
         Gate.init();
+    }
 
-        /* persistent corpus not required in this class
+    private void appInit() throws GateException, IOException {
 
-        //  create&open a new Serial Data Store
-        //  pass the datastore class and path as parameteres
-        persistentDS = (SerialDataStore)Factory.createDataStore("gate.persist.SerialDataStore", dataStoreDir);
-        persistentDS.open();
-
-        Corpus corpus = Factory.newCorpus(corpusName);
-
-        // save corpus in datastore
-        //    SecurityInfo is ignored for SerialDataStore - just pass null
-        //    a new persisent corpus is returned
-        persistentCorpus = (Corpus) persistentDS.adopt(corpus, null);
-        persistentDS.sync(persistentCorpus);
-        */
-
+        //initialise application and new document corpus for this object
         documentCorpus = Factory.newCorpus(corpusName);
 
         // load the saved application
         application = (CorpusController) PersistenceManager.loadObjectFromFile(gateConfigFile);
         application.setCorpus(documentCorpus);
-    }
 
-    private void addAllToCorpus(URL directory, String extension) throws IOException, GateException {
-        //assuming UTF-8 encoding and recursive iteration
-        documentCorpus.populate(directory, new ExtensionFileFilter("XML files", extension), "UTF-8", true);
+        this.applicationInit = true;
     }
 
     private void addToCorpus(File file, String encoding, String mimeType) throws MalformedURLException, GateException {
@@ -99,13 +73,21 @@ public class SentiBatchClassificationImpl implements GateBatchClassification, Pr
 
     }
 
-    public double simpleClassify(File file, String encoding, String mimeType) throws IOException, GateException {
+    public double simpleClassify(String messageToClassify) throws IOException, GateException {
 
         double classificationScore = 0.0;
 
-        if (!Gate.isInitialised()) init();
+        if (!Gate.isInitialised()) gateInit();
+        if (!this.applicationInit) appInit();
+
+        File tempFile = new File("tempClassificationImp" + "_" + Gate.genSym() + ".xml");
+        FileWriterWithEncoding tempWriter = new FileWriterWithEncoding(tempFile,"UTF-8");
+        tempWriter.write("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<twit>\n<text>" + messageToClassify + "</text>\n</twit>");
+        tempWriter.flush();
+        tempWriter.close();
+
         documentCorpus.clear();
-        addToCorpus(file,encoding,mimeType);
+        addToCorpus(tempFile,"UTF-8","text/xml");
         application.execute();
 
         Document classifiedDoc = documentCorpus.iterator().next();
@@ -117,6 +99,7 @@ public class SentiBatchClassificationImpl implements GateBatchClassification, Pr
             classificationScore = Float.parseFloat((String)classificationScoreStr.next().getFeatures().get("score"));
         }
 
+        tempFile.delete();
         return classificationScore;
     }
 
@@ -168,10 +151,5 @@ public class SentiBatchClassificationImpl implements GateBatchClassification, Pr
 
     public void setCorpusName(String corpusName) {
         this.corpusName = corpusName;
-    }
-
-    @Override
-    public void process(Exchange exchange) throws Exception {
-        //To change body of implemented methods use File | Settings | File Templates.
     }
 }

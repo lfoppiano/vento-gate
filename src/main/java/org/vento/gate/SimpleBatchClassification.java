@@ -1,5 +1,6 @@
 package org.vento.gate;
 
+import gate.util.GateException;
 import java.io.IOException;
 
 /**
@@ -11,14 +12,6 @@ import java.io.IOException;
  */
 public interface SimpleBatchClassification {
 
-    //public void init() throws GateException, IOException;
-
-    //public void addAllToCorpus(URL directory, String extension) throws IOException, GateException;
-
-    //public void addToCorpus(File file, String encoding, String mimeType) throws MalformedURLException, GateException;
-
-    //public File classify(File file, String encoding, String mimeType) throws IOException, GateException;
-
-    public double simpleClassify(String toCheck) throws IOException;
+    public double simpleClassify(String toCheck) throws IOException, GateException;
 
 }
