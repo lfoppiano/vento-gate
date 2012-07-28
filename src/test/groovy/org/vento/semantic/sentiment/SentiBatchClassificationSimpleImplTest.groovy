@@ -2,6 +2,7 @@ package org.vento.semantic.sentiment
 
 import org.junit.Test
 import org.vento.gate.SimpleBatchClassification
+import org.vento.samantic.sentiment.SentiBatchClassificationSimpleImpl
 
 /**
  * Created with IntelliJ IDEA.

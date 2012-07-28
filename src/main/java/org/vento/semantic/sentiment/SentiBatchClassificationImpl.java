@@ -80,7 +80,9 @@ public class SentiBatchClassificationImpl implements SimpleBatchClassification{
         if (!Gate.isInitialised()) gateInit();
         if (!this.applicationInit) appInit();
 
-        File tempFile = new File("tempClassificationImp" + "_" + Gate.genSym() + ".xml");
+        File tempFile = File.createTempFile("tempClassificationImp", ".xml");
+        tempFile.deleteOnExit();
+
         FileWriterWithEncoding tempWriter = new FileWriterWithEncoding(tempFile,"UTF-8");
         tempWriter.write("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<twit>\n<text>" + messageToClassify + "</text>\n</twit>");
         tempWriter.flush();
@@ -89,6 +91,7 @@ public class SentiBatchClassificationImpl implements SimpleBatchClassification{
         documentCorpus.clear();
         addToCorpus(tempFile,"UTF-8","text/xml");
         application.execute();
+        //application.cleanup();
 
         Document classifiedDoc = documentCorpus.iterator().next();
 
