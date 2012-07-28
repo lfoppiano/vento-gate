@@ -1,4 +1,4 @@
-package org.vento.samantic.sentiment;
+package org.vento.semantic.sentiment;
 
 import org.vento.gate.SimpleBatchClassification
 
