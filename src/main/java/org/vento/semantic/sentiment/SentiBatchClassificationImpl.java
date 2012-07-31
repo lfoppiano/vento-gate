@@ -28,21 +28,22 @@ public class SentiBatchClassificationImpl implements SimpleBatchClassification{
     private String corpusName;
     private boolean applicationInit = false;
 
-    private void gateInit() throws GateException {
+    private void gateInit() throws GateException, IOException {
 
         Gate.setGateHome(gateHome);
 
         // initialise GATE - this must be done before calling any GATE APIs
         Gate.init();
+        application = (CorpusController) PersistenceManager.loadObjectFromFile(gateConfigFile);
     }
 
-    private void appInit() throws GateException, IOException {
+    private void appInit() throws GateException {
 
         //initialise application and new document corpus for this object
         documentCorpus = Factory.newCorpus(corpusName);
 
         // load the saved application
-        application = (CorpusController) PersistenceManager.loadObjectFromFile(gateConfigFile);
+
         application.setCorpus(documentCorpus);
 
         this.applicationInit = true;
@@ -70,7 +71,6 @@ public class SentiBatchClassificationImpl implements SimpleBatchClassification{
             documentCorpus.unloadDocument(doc);
             Factory.deleteResource(doc);
         }
-
     }
 
     public double simpleClassify(String messageToClassify) throws IOException, GateException {
@@ -78,7 +78,6 @@ public class SentiBatchClassificationImpl implements SimpleBatchClassification{
         double classificationScore = 0.0;
 
         if (!Gate.isInitialised()) gateInit();
-        if (!this.applicationInit) appInit();
 
         File tempFile = File.createTempFile("tempClassificationImp", ".xml");
         tempFile.deleteOnExit();
@@ -88,10 +87,22 @@ public class SentiBatchClassificationImpl implements SimpleBatchClassification{
         tempWriter.flush();
         tempWriter.close();
 
-        documentCorpus.clear();
+        if (documentCorpus!=null){
+            Iterator<Document> i = documentCorpus.iterator();
+            if (i.hasNext()) {
+                Document tmpDoc = i.next();
+                documentCorpus.unloadDocument(tmpDoc);
+                Factory.deleteResource(tmpDoc);
+            }
+            documentCorpus.clear();
+            documentCorpus.cleanup();
+            Factory.deleteResource(documentCorpus);    //might be too much to delete the corpus and recreate it in each loop
+        }                                              //not sure if it has an impact on the memory
+
+        appInit(); //if (!this.applicationInit)
+
         addToCorpus(tempFile,"UTF-8","text/xml");
         application.execute();
-        //application.cleanup();
 
         Document classifiedDoc = documentCorpus.iterator().next();
 
@@ -103,6 +114,7 @@ public class SentiBatchClassificationImpl implements SimpleBatchClassification{
         }
 
         tempFile.delete();
+
         return classificationScore;
     }
 
