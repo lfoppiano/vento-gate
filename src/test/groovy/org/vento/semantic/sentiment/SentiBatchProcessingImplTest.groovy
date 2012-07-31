@@ -1,13 +1,12 @@
 package org.vento.semantic.sentiment;
 
-import gate.util.GateException
-import org.junit.Before
-import org.junit.Test
-import org.vento.gate.GateBatchProcessing
-import gate.Document
+
 import gate.Annotation
+import gate.Document
 import gate.Factory
+import gate.util.GateException
 import groovy.xml.MarkupBuilder
+import org.vento.gate.GateBatchProcessing
 
 /**
  * Created by IntelliJ IDEA.
@@ -17,7 +16,7 @@ import groovy.xml.MarkupBuilder
  * To change this template use File | Settings | File Templates.
  */
 public class SentiBatchProcessingImplTest {
-    
+
     GateBatchProcessing batchLearning;
     GateBatchProcessing batchClassification;
     //File gateHome = new File("/home/mpolojko/GATE_Developer_7.0");
@@ -29,7 +28,7 @@ public class SentiBatchProcessingImplTest {
 
         File gateConfigFile = new File(this.getClass().getResource("/gate-project-training/batch-learning.training.configuration.xml").toURI());
 
-        String dataStore = this.getClass().getResource("/").toURI().toString()+"/temp_learning_datastore/";
+        String dataStore = this.getClass().getResource("/").toURI().toString() + "/temp_learning_datastore/";
 
         batchLearning = new SentiBatchProcessingImpl(gateHome, gateConfigFile, dataStore, "learningCorpus");
     }
@@ -38,7 +37,7 @@ public class SentiBatchProcessingImplTest {
 
         File gateConfigFile = new File(this.getClass().getResource("/gate-project-classification/batch-learning.classification.configuration.xml").toURI());
 
-        String dataStore = this.getClass().getResource("/").toURI().toString()+"/temp_classification_datastore/";
+        String dataStore = this.getClass().getResource("/").toURI().toString() + "/temp_classification_datastore/";
 
         batchClassification = new SentiBatchProcessingImpl(gateHome, gateConfigFile, dataStore, "classificationCorpus");
     }
@@ -61,7 +60,7 @@ public class SentiBatchProcessingImplTest {
         batchLearning.perform();
         def after = System.currentTimeMillis()
 
-        println "learning session finished, took ${after-before} ms"
+        println "learning session finished, took ${after - before} ms"
     }
 
 
@@ -73,9 +72,9 @@ public class SentiBatchProcessingImplTest {
 
         println "start loading"
 
-        corpusDirectory.eachFile{file->
+        corpusDirectory.eachFile {file ->
 
-          batchLearning.addToCorpus(file,"UTF-8",null)
+            batchLearning.addToCorpus(file, "UTF-8", null)
 
         }
 
@@ -85,7 +84,7 @@ public class SentiBatchProcessingImplTest {
         batchLearning.perform();
         def after = System.currentTimeMillis()
 
-        println "learning session finished, took ${after-before} ms"
+        println "learning session finished, took ${after - before} ms"
 
     }
 
@@ -105,18 +104,18 @@ public class SentiBatchProcessingImplTest {
         batchClassification.perform();
         def after = System.currentTimeMillis()
 
-        println "classification session finished, took ${after-before} ms"
+        println "classification session finished, took ${after - before} ms"
 
         Iterator<Document> corpusIterator = batchClassification.getCorpus().iterator()
 
-        while (corpusIterator.hasNext()){
+        while (corpusIterator.hasNext()) {
 
             Document tempDoc = corpusIterator.next()
 
             Iterator classificationScoreStr = tempDoc.getAnnotations("Output").get("Review").iterator()
             Annotation tempAnnotation = tempDoc.getAnnotations("Original markups").get("text").iterator().next()
 
-            if (classificationScoreStr.hasNext()){
+            if (classificationScoreStr.hasNext()) {
 
                 def classificationScore = classificationScoreStr.next().getFeatures().get("score")
 
@@ -126,9 +125,9 @@ public class SentiBatchProcessingImplTest {
                 def classifiedFile = new FileWriter(classifiedEntriesOut + "${classificationScore}/" + tempDoc.getName()[0..-7])
                 def xml = new MarkupBuilder(classifiedFile)
 
-                xml.'twit'{
-                   text(content)
-                   score(classificationScore)
+                xml.'twit' {
+                    text(content)
+                    score(classificationScore)
                 }
             }
         }
@@ -144,7 +143,7 @@ public class SentiBatchProcessingImplTest {
         //File corpusDirectory = new File(this.getClass().getResource("/gate-project-classification/classification-input/").toURI());
         File corpusDirectory = new File("/Users/Martin/Desktop/amazonReviewsSorted/quickTest/2.0/")
 
-        def stats = ['correct':0,'positiveMiss':0,'negativeMiss':0, 'notClassified':0, 'oneOff':0]
+        def stats = ['correct': 0, 'positiveMiss': 0, 'negativeMiss': 0, 'notClassified': 0, 'oneOff': 0]
 
 
         println "start loading"
@@ -162,30 +161,30 @@ public class SentiBatchProcessingImplTest {
         batchClassification.perform();
         def after = System.currentTimeMillis()
 
-        println "classification session finished, took ${after-before} ms"
+        println "classification session finished, took ${after - before} ms"
 
         Iterator<Document> corpusIterator = batchClassification.getCorpus().iterator()
-        while (corpusIterator.hasNext()){
+        while (corpusIterator.hasNext()) {
             Document tempDoc = corpusIterator.next()
             Annotation tempAnnotation = tempDoc.getAnnotations("Original markups").get("score").iterator().next()
 
-            String originalScoreStr = tempDoc.getContent().getContent(tempAnnotation.startNode.getOffset(),tempAnnotation.endNode.getOffset()).toString()
+            String originalScoreStr = tempDoc.getContent().getContent(tempAnnotation.startNode.getOffset(), tempAnnotation.endNode.getOffset()).toString()
 
             Iterator classificationScoreStr = tempDoc.getAnnotations("Output").get("Review").iterator()
 
-            if (classificationScoreStr.hasNext()){
+            if (classificationScoreStr.hasNext()) {
 
                 float originalScore = originalScoreStr.toFloat()
 
                 float classificationScore = classificationScoreStr.next().getFeatures().get("score").toFloat()
 
-                if (originalScore==classificationScore+1 ||  originalScore==classificationScore-1)
+                if (originalScore == classificationScore + 1 || originalScore == classificationScore - 1)
                     stats['oneOff']++
                 else
-                    if (originalScore>classificationScore) stats['negativeMiss']++
-                        else if (originalScore<classificationScore) stats['positiveMiss']++
-                             else
-                                stats['correct']++
+                if (originalScore > classificationScore) stats['negativeMiss']++
+                else if (originalScore < classificationScore) stats['positiveMiss']++
+                else
+                    stats['correct']++
             }
             else
                 stats['notClassified']++
@@ -195,10 +194,10 @@ public class SentiBatchProcessingImplTest {
 
         int docsTotal = batchClassification.getCorpus().size()
 
-        stats.each {label,number->
-            println "${label}: ${(number/docsTotal)*100}"
+        stats.each {label, number ->
+            println "${label}: ${(number / docsTotal) * 100}"
         }
-      //}
+        //}
     }
 
 }
