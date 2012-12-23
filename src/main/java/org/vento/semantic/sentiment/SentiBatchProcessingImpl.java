@@ -43,10 +43,13 @@ public class SentiBatchProcessingImpl implements GateBatchProcessing{
     @Override
     public void init(File gateHome, File gateConfigFile, String dataStoreDir, String corpusName) throws GateException, IOException {
 
-        Gate.setGateHome(gateHome);
+        if (!Gate.isInitialised()) {
 
-        // initialise GATE - this must be done before calling any GATE APIs
-        Gate.init();
+            Gate.setGateHome(gateHome);
+
+            // initialise GATE - this must be done before calling any GATE APIs
+            Gate.init();
+        }
 
         //  create&open a new Serial Data Store
         //  pass the datastore class and path as parameteres
