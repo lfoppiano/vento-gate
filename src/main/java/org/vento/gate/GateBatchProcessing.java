@@ -27,6 +27,6 @@ public interface GateBatchProcessing {
 
     public Corpus getCorpus();
 
-    public void perform() throws ExecutionException, GateException;
+    public void perform() throws ExecutionException, IOException, GateException;
 
 }

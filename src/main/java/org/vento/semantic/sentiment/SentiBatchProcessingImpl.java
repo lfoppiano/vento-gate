@@ -15,6 +15,7 @@ import gate.util.ExtensionFileFilter;
 import gate.util.GateException;
 import gate.util.Strings;
 import gate.util.persistence.PersistenceManager;
+import org.apache.commons.io.FileUtils;
 import org.vento.gate.GateBatchProcessing;
 
 import java.io.File;
@@ -103,9 +104,10 @@ public class SentiBatchProcessingImpl implements GateBatchProcessing{
      return persistentCorpus;
     }
 
-    public void perform() throws ExecutionException, GateException {
+    public void perform() throws ExecutionException, IOException, GateException {
         application.execute();
-        //persistentDS.close();
+        persistentDS.close();
+        FileUtils.cleanDirectory(persistentDS.getStorageDir());
 
     }
 }
