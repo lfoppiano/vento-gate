@@ -1,2 +1,5 @@
 target
 .idea/*
+*.class
+vento-senti-gate.iml
+*.iml
