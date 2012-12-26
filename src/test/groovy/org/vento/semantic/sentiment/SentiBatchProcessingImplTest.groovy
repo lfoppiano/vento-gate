@@ -7,6 +7,8 @@ import gate.Factory
 import gate.util.GateException
 import groovy.xml.MarkupBuilder
 import org.vento.gate.GateBatchProcessing
+import org.junit.Test
+import org.junit.Ignore
 
 /**
  * Created by IntelliJ IDEA.
@@ -42,7 +44,8 @@ public class SentiBatchProcessingImplTest {
         batchClassification = new SentiBatchProcessingImpl(gateHome, gateConfigFile, dataStore, "classificationCorpus");
     }
 
-
+    @Ignore
+    @Test
     public void testEnd2EndLearning() throws Exception {
         setUpLearning();
 
@@ -63,7 +66,8 @@ public class SentiBatchProcessingImplTest {
         println "learning session finished, took ${after - before} ms"
     }
 
-
+    @Ignore
+    @Test
     public void testEnd2EndLearningSingular() throws Exception {
         setUpLearning();
 

@@ -8,6 +8,7 @@ import gate.util.GateException;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.net.URISyntaxException;
 import java.net.URL;
 
 /**
@@ -19,9 +20,9 @@ import java.net.URL;
  */
 public interface GateBatchProcessing {
     
-    public void init(File gateHome, File gateConfigFile, String dataStoreDir, String corpusName) throws GateException, IOException;
+    public void init(File gateHome, File gateConfigFile, String dataStoreDir, String corpusName) throws GateException, IOException, URISyntaxException;
 
-    public void addAllToCorpus(URL directory, String extension) throws IOException, GateException;
+    public void addAllToCorpus(URL directory, String extension) throws IOException, GateException, URISyntaxException;
 
     public void addToCorpus(File file, String encoding, String mimeType) throws MalformedURLException, GateException;
 
