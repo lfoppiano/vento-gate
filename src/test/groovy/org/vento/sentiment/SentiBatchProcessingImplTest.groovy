@@ -1,4 +1,4 @@
-package org.vento.semantic.sentiment;
+package org.vento.sentiment;
 
 
 import gate.Annotation
@@ -6,9 +6,10 @@ import gate.Document
 import gate.Factory
 import gate.util.GateException
 import groovy.xml.MarkupBuilder
-import org.vento.gate.GateBatchProcessing
+import org.vento.sentiment.gate.GateBatchProcessing
 import org.junit.Test
 import org.junit.Ignore
+import org.vento.sentiment.gate.SentiBatchProcessingImpl
 
 /**
  * Created by IntelliJ IDEA.
@@ -19,22 +20,23 @@ import org.junit.Ignore
  */
 public class SentiBatchProcessingImplTest {
 
-    GateBatchProcessing batchLearning;
-    GateBatchProcessing batchClassification;
+    File gateHome
+    GateBatchProcessing batchLearning
+    //GateBatchProcessing batchClassification;
     //File gateHome = new File("/home/mpolojko/GATE_Developer_7.0");
-    File gateHome = new File("/Applications/GATE_Developer_7.0");
     //File gateHome = new File("/opt/GATE_7.0");
-
 
     public void setUpLearning() throws URISyntaxException, IOException, GateException {
 
+        gateHome = new File("/gateWorkspace/GATE_Developer_7.1");
+
         File gateConfigFile = new File(this.getClass().getResource("/gate-project-training/batch-learning.training.configuration.xml").toURI());
 
-        String dataStore = this.getClass().getResource("/").toURI().toString() + "/temp_learning_datastore/";
+        String dataStore = this.getClass().getResource("/gate-project-training/temp-learning-datastore").toURI().toString();
 
         batchLearning = new SentiBatchProcessingImpl(gateHome, gateConfigFile, dataStore, "learningCorpus");
     }
-
+/*
     public void setUpClassification() throws URISyntaxException, IOException, GateException {
 
         File gateConfigFile = new File(this.getClass().getResource("/gate-project-classification/batch-learning.classification.configuration.xml").toURI());
@@ -43,14 +45,12 @@ public class SentiBatchProcessingImplTest {
 
         batchClassification = new SentiBatchProcessingImpl(gateHome, gateConfigFile, dataStore, "classificationCorpus");
     }
-
-    @Ignore
-    @Test
+  */
     public void testEnd2EndLearning() throws Exception {
         setUpLearning();
 
         //File corpusDirectory = new File("/home/mpolojko/Desktop/realLearningInput/");
-        File corpusDirectory = new File("/Users/Martin/Desktop/learningInputShortReviews/");
+        File corpusDirectory = new File(this.getClass().getResource("/gate-project-training/training-input/").toURI());
         //File corpusDirectory = new File("/home/lfoppiano/develop/bi/batch_learning_GATE_resources/realLearningInput");
 
         println "start loading"
@@ -66,7 +66,7 @@ public class SentiBatchProcessingImplTest {
         println "learning session finished, took ${after - before} ms"
     }
 
-    @Ignore
+    @Ignore("Not working this way of doing things... ahahahah")
     @Test
     public void testEnd2EndLearningSingular() throws Exception {
         setUpLearning();
@@ -91,7 +91,7 @@ public class SentiBatchProcessingImplTest {
         println "learning session finished, took ${after - before} ms"
 
     }
-
+/*
     public void testClassificationOutput() throws Exception {
         setUpClassification()
 
@@ -203,5 +203,5 @@ public class SentiBatchProcessingImplTest {
         }
         //}
     }
-
+*/
 }

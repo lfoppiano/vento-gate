@@ -1,8 +1,7 @@
-package org.vento.gate;
+package org.vento.sentiment.gate;
 
 import gate.Corpus;
 import gate.creole.ExecutionException;
-import gate.creole.ResourceInstantiationException;
 import gate.util.GateException;
 
 import java.io.File;

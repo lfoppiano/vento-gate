@@ -1,4 +1,4 @@
-package org.vento.semantic.sentiment;
+package org.vento.sentiment.gate;
 
 import gate.*;
 import gate.corpora.DocumentImpl;
@@ -8,7 +8,7 @@ import gate.util.ExtensionFileFilter;
 import gate.util.GateException;
 import gate.util.persistence.PersistenceManager;
 import org.apache.commons.io.FileUtils;
-import org.vento.gate.GateBatchProcessing;
+import org.vento.sentiment.gate.GateBatchProcessing;
 
 import java.io.File;
 import java.io.IOException;
@@ -70,7 +70,7 @@ public class SentiBatchProcessingImpl implements GateBatchProcessing {
     public void addAllToCorpus(URL directory, String extension) throws IOException, GateException, URISyntaxException {
         //assuming UTF-8 encoding and recursive iteration
         persistentCorpus.populate(directory, new ExtensionFileFilter("XML files", extension), "UTF-8", true);
-        FileUtils.cleanDirectory(new File(directory.toURI()));
+    //    FileUtils.cleanDirectory(new File(directory.toURI()));
     }
 
     public void addToCorpus(File file, String encoding, String mimeType) throws MalformedURLException, GateException {

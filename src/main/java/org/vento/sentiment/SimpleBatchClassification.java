@@ -1,4 +1,4 @@
-package org.vento.gate;
+package org.vento.sentiment;
 
 import gate.util.GateException;
 import java.io.IOException;
@@ -12,6 +12,6 @@ import java.io.IOException;
  */
 public interface SimpleBatchClassification {
 
-    public double simpleClassify(String toCheck) throws IOException, GateException;
+    public double simpleClassify(String toCheck) throws Exception;
 
 }

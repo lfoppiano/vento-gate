@@ -1,7 +1,8 @@
-package org.vento.semantic.sentiment
+package org.vento.sentiment
 
+import org.junit.Before
 import org.junit.Test
-import org.vento.gate.SimpleBatchClassification
+import org.vento.sentiment.statistical.SentiBatchClassificationSimpleImpl
 
 /**
  * Created with IntelliJ IDEA.
@@ -14,6 +15,7 @@ class SentiBatchClassificationSimpleImplTest {
 
     SimpleBatchClassification simpleBatchClassification
 
+    @Before
     public void initialize() {
 
         simpleBatchClassification = new SentiBatchClassificationSimpleImpl()
@@ -22,7 +24,6 @@ class SentiBatchClassificationSimpleImplTest {
     }
     @Test
     public void testSimpleClassify() {
-          initialize()
           assert simpleBatchClassification.simpleClassify("I saw a horrible movie today") == 1.0
           assert simpleBatchClassification.simpleClassify("I am very happy right now") == 3.0
           assert simpleBatchClassification.simpleClassify("RT : On this day in 1987, Saddam's regime attacked the Kurdish city of Serdet (Sardasht) with chemical weapons - 1000s parished") == 1.0

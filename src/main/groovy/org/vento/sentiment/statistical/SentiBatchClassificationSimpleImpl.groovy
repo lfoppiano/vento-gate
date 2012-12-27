@@ -1,6 +1,6 @@
-package org.vento.semantic.sentiment;
+package org.vento.sentiment.statistical
 
-import org.vento.gate.SimpleBatchClassification
+import org.vento.sentiment.SimpleBatchClassification
 
 /**
  * Created by IntelliJ IDEA.

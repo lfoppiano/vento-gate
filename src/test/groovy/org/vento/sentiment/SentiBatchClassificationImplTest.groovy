@@ -1,7 +1,8 @@
-package org.vento.semantic.sentiment
+package org.vento.sentiment
 
 import org.junit.Test
-import org.vento.gate.SimpleBatchClassification
+import org.vento.sentiment.gate.SentiBatchClassificationImpl
+
 
 /**
  * Created with IntelliJ IDEA.
@@ -17,7 +18,7 @@ class SentiBatchClassificationImplTest {
     public void initialize() {
 
         batchClassification = new SentiBatchClassificationImpl()
-        batchClassification.setGateHome(new File("/Applications/GATE_Developer_7.0"))
+        batchClassification.setGateHome(new File("/gateWorkspace/GATE_Developer_7.1"))
         batchClassification.setGateConfigFile(new File(this.getClass().getResource("/gate-project-classification/batch-learning.classification.configuration.xml").toURI()))
         batchClassification.setCorpusName("classificationTestCorpus")
     }

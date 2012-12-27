@@ -1,11 +1,11 @@
-package org.vento.semantic.sentiment;
+package org.vento.sentiment.gate;
 
 import gate.*;
 import gate.corpora.DocumentImpl;
 import gate.util.GateException;
 import gate.util.persistence.PersistenceManager;
 import org.apache.commons.io.output.FileWriterWithEncoding;
-import org.vento.gate.SimpleBatchClassification;
+import org.vento.sentiment.SimpleBatchClassification;
 
 import java.io.File;
 import java.io.IOException;
@@ -19,7 +19,7 @@ import java.util.Iterator;
  * Time: 18:23
  * To change this template use File | Settings | File Templates.
  */
-public class SentiBatchClassificationImpl implements SimpleBatchClassification{
+public class SentiBatchClassificationImpl implements SimpleBatchClassification {
 
     private CorpusController application;
     private Corpus documentCorpus;
