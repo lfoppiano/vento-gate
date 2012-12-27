@@ -576,7 +576,7 @@
                 <entry>
                   <string>configFileURL</string>
                   <gate.util.persistence.PersistenceManager-URLHolder>
-                    <urlString>$relpath$../vento-senti-brain/paum.xml</urlString>
+                    <urlString>$relpath$../vento-senti-brain.training/paum.xml</urlString>
                   </gate.util.persistence.PersistenceManager-URLHolder>
                 </entry>
               </localMap>

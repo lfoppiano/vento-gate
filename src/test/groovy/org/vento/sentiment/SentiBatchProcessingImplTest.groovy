@@ -46,6 +46,8 @@ public class SentiBatchProcessingImplTest {
         batchClassification = new SentiBatchProcessingImpl(gateHome, gateConfigFile, dataStore, "classificationCorpus");
     }
   */
+
+    @Test
     public void testEnd2EndLearning() throws Exception {
         setUpLearning();
 
@@ -76,7 +78,7 @@ public class SentiBatchProcessingImplTest {
 
         println "start loading"
 
-        corpusDirectory.eachFile {file ->
+        corpusDirectory.eachFile { file ->
 
             batchLearning.addToCorpus(file, "UTF-8", null)
 
