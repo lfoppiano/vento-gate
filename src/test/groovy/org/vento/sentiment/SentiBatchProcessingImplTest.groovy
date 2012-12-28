@@ -28,7 +28,7 @@ public class SentiBatchProcessingImplTest {
 
     public void setUpLearning() throws URISyntaxException, IOException, GateException {
 
-        gateHome = new File("/gateWorkspace/GATE_Developer_7.1");
+        gateHome = new File("/Applications/GATE_Developer_7.1");
 
         File gateConfigFile = new File(this.getClass().getResource("/gate-project-training/batch-learning.training.configuration.xml").toURI());
 
@@ -47,6 +47,7 @@ public class SentiBatchProcessingImplTest {
     }
   */
 
+    @Ignore("Not a unit test. Should be disabled")
     @Test
     public void testEnd2EndLearning() throws Exception {
         setUpLearning();
