@@ -8,7 +8,7 @@
     <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
 
-    <name>Gate batch learning</name>
+    <name>Vento Gate batch learning library</name>
     <url>http://www.vento.org</url>
 
     <dependencies>
@@ -18,23 +18,19 @@
             <version>7.1</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.camel</groupId>
-            <artifactId>camel-core</artifactId>
-            <version>2.10.0</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.codehaus.groovy</groupId>
-            <artifactId>groovy-all</artifactId>
-            <version>1.8.6</version>
-            <!--<scope>test</scope>-->
-        </dependency>
-        <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
             <version>1.2.16</version>
             <scope>provided</scope>
         </dependency>
+
+        <!-- Groovy stuff -->
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>${groovy.version}</version>
+        </dependency>
+
     </dependencies>
 
 
@@ -45,25 +41,35 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version>
+                <version>2.5.1</version>
                 <configuration>
                     <source>1.6</source>
                     <target>1.6</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.4.3</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+
 
             <plugin>
                 <groupId>org.codehaus.gmaven</groupId>
                 <artifactId>gmaven-plugin</artifactId>
                 <version>1.4</version>
                 <configuration>
-                    <providerSelection>1.8</providerSelection>
+                    <providerSelection>2.0</providerSelection>
+                    <sourceEncoding>UTF-8</sourceEncoding>
                     <source/>
                 </configuration>
                 <dependencies>
-                    <dependency>
+                    <!--dependency>
                         <groupId>org.codehaus.gmaven.runtime</groupId>
-                        <artifactId>gmaven-runtime-1.8</artifactId>
+                        <artifactId>gmaven-runtime</artifactId>
                         <version>1.4</version>
                         <exclusions>
                             <exclusion>
@@ -71,11 +77,11 @@
                                 <artifactId>groovy-all</artifactId>
                             </exclusion>
                         </exclusions>
-                    </dependency>
+                    </dependency-->
                     <dependency>
                         <groupId>org.codehaus.groovy</groupId>
                         <artifactId>groovy-all</artifactId>
-                        <version>1.8.6</version>
+                        <version>${groovy.version}</version>
                     </dependency>
                 </dependencies>
                 <executions>
@@ -92,6 +98,7 @@
         </plugins>
     </build>
 <properties>
-<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <groovy.version>2.0.0</groovy.version>
 </properties>
 </project>
